@@ -120,7 +120,7 @@ namespace singly_linked_list
     {
         static void Main(String[] args)
         {
-
+            List obj = new List();
         }
     }
 
