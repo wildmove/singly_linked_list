@@ -118,7 +118,10 @@ namespace singly_linked_list
 
     class Program
     {
+        static void Main(String[] args)
+        {
 
+        }
     }
 
 
