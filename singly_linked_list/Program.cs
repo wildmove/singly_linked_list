@@ -13,6 +13,6 @@ namespace singly_linked_list
 
     class List
     {
-
+        Node START;
     }
 }
