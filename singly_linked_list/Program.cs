@@ -135,6 +135,67 @@ namespace singly_linked_list
                     Console.Write("\nEnter your choice (1-5)");
                     char ch = Convert.ToChar(Console.ReadLine());
 
+                    switch (ch)
+                    {
+                        case '1':
+                            {
+                                obj.addNote();
+                            }
+                            break;
+                        case '2':
+                            {
+                                if (obj.listEmpty())
+                                {
+                                    Console.WriteLine("\nList is empty");
+                                    break;
+                                }
+                                Console.Write("\nEnter the roll number of" + "rhe student whose record is to be deleted : ");
+                                int nim = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine();
+                                if (obj.delNode(nim) == false)
+                                    Console.WriteLine("\n Record not found");
+                                else
+                                    Console.WriteLine("\n Record with roll number " + nim + "Deleted");
+                            }
+                            break ;
+                        case '3':
+                            {
+                                obj.traverse();
+                            }
+                            break;
+                        case '4':
+                            {
+                                if (obj.listEmpty() == true)
+                                {
+                                    Console.WriteLine("\nList is empty");
+                                    break ;
+                                }
+                                Node previous, current;
+                                previous = current = null;
+                                Console.Write("\nEnter the roll number of" + "the student whose record is to be deleted : ");
+                                int num = Convert.ToInt32(Console.ReadLine());
+                                if (obj.Search(num, ref previous, ref current) == false)
+                                    Console.WriteLine("\n Record not found");
+                                else
+                                {
+                                    Console.WriteLine("\nRecord Found");
+                                    Console.WriteLine("\nRoll number: " + current.rollNumber);
+                                    Console.WriteLine("\nName: " + current.name);
+                                }
+                            }
+                            break;
+                        case '5':
+                            return;
+                        default:
+                            {
+                                Console.WriteLine("\nInvalid option");
+                                break;
+                            }
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("\nCheck for the value entered ");
                 }
             }
         }
